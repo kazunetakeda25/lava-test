@@ -1,0 +1,41 @@
+syntax = "proto3";
+package lottery.lottery;
+
+option go_package = "lottery/x/lottery/types";
+
+import "gogoproto/gogo.proto";
+import "cosmos_proto/cosmos.proto";
+import "cosmos/base/v1beta1/coin.proto";
+// this line is used by starport scaffolding # proto/tx/import
+
+
+// Msg defines the Msg service.
+service Msg {
+  rpc CreateBet(MsgCreateBet) returns (MsgCreateBetResponse);
+  rpc UpdateSystemInfo(MsgUpdateSystemInfo) returns (MsgUpdateSystemInfoResponse);
+  // this line is used by starport scaffolding # proto/tx/rpc
+}
+
+message MsgCreateBet {
+  string creator = 1 [(cosmos_proto.scalar) = "cosmos.AddressString"];
+  cosmos.base.v1beta1.Coin amount = 2 [(gogoproto.nullable) = false];
+}
+
+message MsgCreateBetResponse {
+  string lotteryId = 1;
+  int64 betIndex = 2;
+}
+
+message MsgUpdateSystemInfo {
+  string creator = 1 [(cosmos_proto.scalar) = "cosmos.AddressString"];
+  cosmos.base.v1beta1.Coin fee = 2;
+  cosmos.base.v1beta1.Coin minBet = 3;
+  cosmos.base.v1beta1.Coin maxBet = 4;
+  int64 betCount = 5;
+}
+
+message MsgUpdateSystemInfoResponse {
+  bool success = 1;
+}
+
+// this line is used by starport scaffolding # proto/tx/message

@@ -1,0 +1,28 @@
+syntax = "proto3";
+package lottery.lottery;
+
+option go_package = "lottery/x/lottery/types";
+
+import "gogoproto/gogo.proto";
+import "cosmos_proto/cosmos.proto";
+import "cosmos/base/v1beta1/coin.proto";
+import "lottery/lottery/bet.proto";
+
+message Lottery {
+  string index = 1;
+  int64 startAt = 2;
+  int64 endAt = 3;
+
+  cosmos.base.v1beta1.Coin fee = 4 [(gogoproto.nullable) = false];
+  cosmos.base.v1beta1.Coin minBet = 5 [(gogoproto.nullable) = false];
+  cosmos.base.v1beta1.Coin maxBet = 6 [(gogoproto.nullable) = false];
+  int64 betCount = 7;
+
+  cosmos.base.v1beta1.Coin betMax = 8 [(gogoproto.nullable) = false];
+  cosmos.base.v1beta1.Coin betMin = 9 [(gogoproto.nullable) = false];
+  repeated Bet bets = 10;
+
+  int64 winnerIdx = 11;
+  cosmos.base.v1beta1.Coin reward = 12 [(gogoproto.nullable) = false];
+}
+

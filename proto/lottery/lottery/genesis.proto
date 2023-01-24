@@ -1,0 +1,18 @@
+syntax = "proto3";
+package lottery.lottery;
+
+import "gogoproto/gogo.proto";
+import "lottery/lottery/params.proto";
+import "lottery/lottery/system_info.proto";
+import "lottery/lottery/lottery.proto";
+// this line is used by starport scaffolding # genesis/proto/import
+
+option go_package = "lottery/x/lottery/types";
+
+// GenesisState defines the lottery module's genesis state.
+message GenesisState {
+  Params params = 1 [(gogoproto.nullable) = false];
+  SystemInfo systemInfo = 2;
+  repeated Lottery lotteryList = 3 [(gogoproto.nullable) = false];
+  // this line is used by starport scaffolding # genesis/proto/state
+}

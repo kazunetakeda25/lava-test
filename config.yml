@@ -1,0 +1,58 @@
+version: 1
+accounts:
+  - name: alice
+    coins: [ "20000lot", "200000000stake" ]
+  - name: bob
+    coins: [ "10000lot", "100000000stake" ]
+  - name: client01
+    coins: [ "500lot", "200000000stake" ]
+  - name: client02
+    coins: [ "500lot", "200000000stake" ]
+  - name: client03
+    coins: [ "500lot", "200000000stake" ]
+  - name: client04
+    coins: [ "500lot", "200000000stake" ]
+  - name: client05
+    coins: [ "500lot", "200000000stake" ]
+  - name: client06
+    coins: [ "500lot", "200000000stake" ]
+  - name: client07
+    coins: [ "500lot", "200000000stake" ]
+  - name: client08
+    coins: [ "500lot", "200000000stake" ]
+  - name: client09
+    coins: [ "500lot", "200000000stake" ]
+  - name: client10
+    coins: [ "500lot", "200000000stake" ]
+  - name: client11
+    coins: [ "500lot", "200000000stake" ]
+  - name: client12
+    coins: [ "500lot", "200000000stake" ]
+  - name: client13
+    coins: [ "500lot", "200000000stake" ]
+  - name: client14
+    coins: [ "500lot", "200000000stake" ]
+  - name: client15
+    coins: [ "500lot", "200000000stake" ]
+  - name: client16
+    coins: [ "500lot", "200000000stake" ]
+  - name: client17
+    coins: [ "500lot", "200000000stake" ]
+  - name: client18
+    coins: [ "500lot", "200000000stake" ]
+  - name: client19
+    coins: [ "500lot", "200000000stake" ]
+  - name: client20
+validators:
+  - name: alice
+    bonded: "100000000stake"
+client:
+  openapi:
+    path: "docs/static/openapi.yml"
+  typescript:
+    path: "ts-client"
+  vuex:
+    path: "vue/src/store"
+faucet:
+  name: bob
+  coins: [ "5lot", "100000stake" ]
